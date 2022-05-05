@@ -1,5 +1,5 @@
 class HumanPlayer
-    def initialize
+    def initialize(length)
     end
     def prompt(prev)
         if prev
@@ -7,7 +7,10 @@ class HumanPlayer
         else 
             puts "enter a second position in format 'x y'"
         end
-        a = []
-        a << gets.chomp.split.map {|ele| ele.to_i}
+        gets.chomp.split.map {|ele| ele.to_i}
+    end
+
+    def do_extra(a, b)
+        #do nothing
     end
 end

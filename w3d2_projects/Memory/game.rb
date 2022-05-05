@@ -23,6 +23,8 @@ class Game
             else
                 input = @player.prompt(false)
             end 
+            p "INPUT:"
+            p input
             make_guess(input)
             @player.do_extra(@board.grid[input[0]][input[1]].val, input)
 
@@ -62,7 +64,7 @@ class Game
 end
 
 if __FILE__ == $PROGRAM_NAME
-    c = HumanPlayer.new
-    g = Game.new(4,c)
+    c = ComputerPlayer.new(6)
+    g = Game.new(6,c)
     g.play
 end
