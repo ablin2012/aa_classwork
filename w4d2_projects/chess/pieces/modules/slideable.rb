@@ -31,12 +31,12 @@ module Slideable
 
     def verify(arr)
         arr.each_with_index do |pos, i|
-            if !pos[0].between(0, 7) || !pos[1].between(0, 7) 
+            if !pos[0].between?(0, 7) || !pos[1].between?(0, 7) 
                 return arr[0...i]
             elsif board[pos].color != self.color && board[pos].color != nil
-                return arr[0...i]
-            elsif board[pos].color == self.color
                 return arr[0..i]
+            elsif board[pos].color == self.color
+                return arr[0...i]
             end
         end
     end
