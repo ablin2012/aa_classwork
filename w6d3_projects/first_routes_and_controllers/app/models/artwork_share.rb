@@ -1,5 +1,5 @@
 class ArtworkShare < ApplicationRecord
-    validates :artwork_id, uniqueness{scope: :viewer_id, message: "This user has already seen this!"}
+    validates :artwork_id, uniqueness: {scope: :viewer_id, message: "This user has already seen this!"}
 
     belongs_to :artwork,
         primary_key: :id,

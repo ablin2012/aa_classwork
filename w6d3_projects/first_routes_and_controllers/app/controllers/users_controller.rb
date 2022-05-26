@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
     def index
-        @users = User.all
+        # render json: params
+        if params.has_key?(:username)
+            username = params[:username]
+            @users = User.where("username ILIKE ?", "%#{username}%")
+        else
+            @users = User.all
+        end
         render json: @users
         # render plain: "I'm in the index action!"
     end
@@ -34,15 +40,13 @@ class UsersController < ApplicationController
 
     def destroy
         @user = User.find(params[:id])
-
         @user.destroy
-
-        redirect_to users_url
+        render json: @user
     end
 
     private
 
     def user_params
-        params.require(:user).permit(:name, :email)
+        params.require(:user).permit(:username)
     end
 end
