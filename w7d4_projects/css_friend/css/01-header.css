@@ -1,0 +1,77 @@
+/* PHASE 1: Header */
+header {
+    font-family: 'Roboto Slab', serif;
+    display: flex;
+    justify-content: space-between;
+    font-size: xx-large;
+    background-color: brown;
+    color: white;
+    /* padding: 20px; */
+    align-items: center;
+}
+
+header.header {
+
+}
+
+h1.header-logo {
+
+}
+
+nav.header-nav {
+
+}
+
+a {
+    display: block;
+}
+
+ul.header-list {
+    display: flex;
+    flex-direction: row;
+}
+
+ul.header-list > li {
+    /* padding-left: 120px; */
+    border: 1px white solid;
+    font-size: smaller;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+ul.header-list li:hover {
+    background-color: black;
+}
+
+.badge {
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    background-color: black;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.badge:hover {
+    background-color: white;
+    color: black
+}
+
+.notifications {
+    display: flex;
+    flex-direction: row;
+}
+
+#notification {
+    position: relative;
+    font-size: small;
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#notification li {
+    border: 1px white solid;
+}
