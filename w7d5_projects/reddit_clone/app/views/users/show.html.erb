@@ -1,0 +1,19 @@
+<% if @current_user.username == @user.username %>
+    <% greeting = "Welcome " + @current_user.username %>
+<% else %>
+    <% greeting = @user.username + "'s subs" %>
+<% end %>
+<h1><%= greeting %></h1>
+
+<ul>
+    <% @user.subs.each do |sub| %>
+        <li><a href="<%= sub_url(sub) %>"><%= sub.title %></a></li>
+    <%end%>
+</ul>
+
+<button><a href="<%= users_url %>">Back to Index</a></button>
+
+<% if @current_user.username == @user.username %>
+    <button><a href="<%= new_sub_url %>">Create a Sub</a></button>
+<% end %>
+

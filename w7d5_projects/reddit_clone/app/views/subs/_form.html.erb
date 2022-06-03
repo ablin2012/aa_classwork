@@ -1,0 +1,23 @@
+<% if type == :new %>
+    <% action_controller = user_subs_url(current_user) %>
+    <% button_text = "Create Sub"%>
+<% else %>
+    <% action_controller = sub_url(sub) %>
+    <% button_text = "Update Sub"%>
+<% end %>
+
+<form action="<%= action_controller %>" method="post">
+    <% if type == :edit %>
+        <input type="hidden" name="_method" value="patch">
+    <% end %>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+    <label>Title:
+        <input type="text" name="sub[title]" value="<%= sub.title %>">
+    </label>
+    <br>
+    <label>Description:
+        <textarea name="sub[description]" rows="4" cols="50"><%= sub.description%></textarea>
+    </label>
+    <br><br>
+    <input type="submit" value="<%= button_text %>">
+</form>
