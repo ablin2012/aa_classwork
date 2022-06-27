@@ -1,0 +1,37 @@
+.clock{
+    background-color:yellow;
+    font-family: 'Fascinate', cursive;
+    padding: 10px;
+}
+
+h1{
+    font-size:30px
+}
+
+ul{
+  display:flex;
+  justify-content:space-around;
+  flex-wrap: wrap;
+}
+
+article{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.tabs{
+    background-color: lightblue;
+    font-family: 'Fredoka One', cursive;
+    padding: 10px;
+    list-style-type: none;
+}
+
+.weather{
+    background-color: pink;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+p{
+ text-align: center;
+}

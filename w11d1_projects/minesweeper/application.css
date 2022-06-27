@@ -1,0 +1,43 @@
+.everything{
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+}
+
+.row{
+    display: flex;
+}
+
+.tile {
+    border: 2px solid lightgray;
+    background-color: gray;
+    border-style: outset;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    /* width: 12.4%;
+    height:  */
+
+}
+
+.tile.revealed{
+    border: 2px solid gray;
+    background-color: lightgray;
+    border-style: inset;
+}
+
+.end-screen{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 2px #000000 solid;
+    background-color: white;
+    margin: 5px;
+    color: red;
+    padding: 10px;
+    text-align: center;
+    z-index: 2;
+}
