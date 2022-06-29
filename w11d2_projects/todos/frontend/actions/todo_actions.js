@@ -10,11 +10,10 @@ export const removeTodo = (todo) => {
 };
 
 export const receiveTodos = (todos) => {
-  const object = {
+  return {
     type: RECEIVE_TODOS,
     todos,
-  };
-  return object
+  }
 };
 
 export const receiveTodo = (todo) => {
