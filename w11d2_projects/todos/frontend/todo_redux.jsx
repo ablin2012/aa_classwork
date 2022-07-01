@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import configureStore from './store/store'
-import {RECEIVE_TODOS, RECEIVE_TODO, REMOVE_TODO, removeTodo, receiveTodos, receiveTodo} from './actions/todo_actions'
+import {RECEIVE_TODOS, RECEIVE_TODO, REMOVE_TODO, fetchTodos, removeTodo, receiveTodos, receiveTodo} from './actions/todo_actions'
 import {RECEIVE_STEPS, RECEIVE_STEP, REMOVE_STEP, removeStep, receiveSteps, receiveStep} from './actions/step_actions'
 import Root from './components/root'
 import {allTodos} from './reducers/selectors'
+import * as APIUtil from './util/todo_api_util'
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -18,5 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.removeStep = removeStep
     window.receiveStep = receiveStep
     window.receiveSteps = receiveSteps
+    window.fetchTodos = fetchTodos
     ReactDOM.render(<Root store={store}/>, root)
 })

@@ -5,6 +5,6 @@ export const allTodos = (state) => {
 
 export const stepsByTodoId = (state, todoId) => {
     const array = Object.values(state.steps);
-    array.filter((el) => {el.todoId === todoId});
+    array = array.filter(el => el.todoId === todoId);
     return array
 }

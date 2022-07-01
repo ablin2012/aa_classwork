@@ -17,14 +17,14 @@ class TodoForm extends React.Component{
   
   handleSubmit(e) {
     e.preventDefault()
-    this.props.receiveTodo(this.state)
-    this.setState({
+    this.props.createTodo(this.state)
+    .then(this.setState({
       id: Math.floor(Math.random() * 10000000),
       title: "",
       body: "",
       done: false,
       detail: false
-    })
+    }))
   }
 
   updateTitle(e) {

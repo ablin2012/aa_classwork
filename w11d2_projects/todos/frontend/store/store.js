@@ -1,9 +1,10 @@
-import {legacy_createStore as createStore} from "redux";
+import {applyMiddleware, legacy_createStore as createStore} from "redux";
 import rootReducer from "../reducers/root_reducer";
+import thunk from "../middleware/thunk";
 
 
 const configureStore = (preloadedState = {}) => {
-  return createStore(rootReducer, preloadedState)
+  return createStore(rootReducer, preloadedState, applyMiddleware(thunk))
 }
 
 export default configureStore

@@ -1,8 +1,10 @@
+const path = require('path');
+
 module.exports = {
     entry: './frontend/todo_redux.jsx',
     output: { //where webpack should output the bundled files
       //we use the output.filename and the output.path properties to tell webpack the name of our bundle and where we want it to be emitted to. 
-        // path: path.resolve(__dirname),
+        path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
         //use path.resolve() to resolve our paths into an absolute path.
         // __dirname tells us the absolute path of the directory containing the currently executing file
         //for demo, can omit path key and just use filename: './bundle.js'

@@ -28,14 +28,14 @@ export const TodoListItem = (props) => {
 
   const showDetail = (e) => {
     e.preventDefault()
-    const props2 = Object.assign({}, props); 
-    if (props2.todo.detail === true) {
-      props2.todo.detail = false 
-      props.receiveTodo(props2.todo)
+    const newProps2 = Object.assign({}, props); 
+    if (newProps2.todo.detail === true) {
+      newProps2.todo.detail = false 
+      props.receiveTodo(newProps2.todo)
     }
     else {
-        props2.todo.detail = true;
-        props.receiveTodo(props2.todo)
+        newProps2.todo.detail = true;
+        props.receiveTodo(newProps2.todo)
     }
   }
 
