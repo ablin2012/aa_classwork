@@ -1,0 +1,1 @@
+json.isDumb @user, :username
