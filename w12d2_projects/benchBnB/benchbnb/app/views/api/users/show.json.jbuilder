@@ -1,1 +1,1 @@
-json.isDumb @user, :username
+json.extract! @user, :username
