@@ -19,14 +19,14 @@
 // Follow up: A linked list can be reversed either iteratively or recursively. Could you implement both?
 
 const reverseList = function(head) {
-    let prev = null;
-    let curr = head;
+    let prev = null; // we initialize a prev variable as the dummy end node that our head will point to
+    let curr = head; // we a current pointer that points to the head
     let temp;
     while (curr) {
-        temp = curr.next;
-        curr.next = prev;
-        prev = curr;
-        curr = temp;
+        temp = curr.next; // we will store the remaining portion of our original list here
+        curr.next = prev; // we redirect our curr to point to our prev node
+        prev = curr; // we reassign our prev node to be our curr node
+        curr = temp; // we reassign curr to the remaining portion of the original list
     }
-    return curr;
+    return prev; // prev will eventually end up being the head of our reversed list
 }
