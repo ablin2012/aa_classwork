@@ -18,7 +18,7 @@
 // 0 <= val <= 50
 
 const removeElements = function(head, val) {
-    let dummy = ListNode({next: head}); // we will create a dummy node that points to the head, so that we can easily find our head
+    let dummy = new ListNode(0, head); // we will create a dummy node that points to the head, so that we can easily find our head
     let prev = dummy; // we will track a prev node
     let curr = head; // and a current node
     let next;
