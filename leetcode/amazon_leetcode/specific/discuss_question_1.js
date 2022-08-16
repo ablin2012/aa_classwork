@@ -18,36 +18,33 @@ const dummySite = function(requests) {
     let loggedIn = null;
     for (let i = 0; i < requests.length; i++) {
         let request = requests[i].split(' ');
-        switch (request[0]) {
-            case "register":
-                if (registeredUsers[request[1]]) {
-                    ans.push('Username already exists');
-                    console.log('1', request)
-                } else {
-                    registeredUsers[request[1]] = request[2];
-                    ans.push('Registered Successfully');
-                    console.log('2', request)
-                };
-            case "login":
-                if (registeredUsers[request[1]] === request[2]) {
-                    loggedIn = request[1];
-                    ans.push('Logged In Successfully');
-                    console.log('3', request)
-                } else {
-                    ans.push('Login Uncsuccessful');
-                    console.log('4', request)
-                };
-            case "logout":
-                if (loggedIn === request[1]) {
-                    loggedIn = null;
-                    ans.push('Logged Out Successfully');
-                    console.log('5', request)
-                } else {
-                    ans.push('Logout Unsuccessful');
-                    console.log('6', request)
-                };
-            default:
-                break;
+        if (request[0] === "register") {
+            if (registeredUsers[request[1]]) {
+                ans.push('Username already exists');
+                console.log('1', request)
+            } else {
+                registeredUsers[request[1]] = request[2];
+                ans.push('Registered Successfully');
+                console.log('2', request)
+            };
+        } else if (request[0] === "login") {
+            if (registeredUsers[request[1]] === request[2]) {
+                loggedIn = request[1];
+                ans.push('Logged In Successfully');
+                console.log('3', request)
+            } else {
+                ans.push('Login Uncsuccessful');
+                console.log('4', request)
+            };
+        } else if (request[0] === "logout") {
+            if (loggedIn === request[1]) {
+                loggedIn = null;
+                ans.push('Logged Out Successfully');
+                console.log('5', request)
+            } else {
+                ans.push('Logout Unsuccessful');
+                console.log('6', request)
+            };
         }
     }
     return ans;
