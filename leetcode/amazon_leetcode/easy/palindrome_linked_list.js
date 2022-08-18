@@ -47,7 +47,7 @@ const isPalindrome2 = function(head) { // method 2
     let left = head; // we initialize our left to be the start of the array
     let right = prev; // we initialize our right to be the start of the reversed array
     while (right) {
-        if (left.val != right.val) { // if the values are equal then it isn't a palindrome
+        if (left.val != right.val) { // if the values arent equal then it isn't a palindrome
             return false;
         }
         right = right.next;

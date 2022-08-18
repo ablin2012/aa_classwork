@@ -15,10 +15,9 @@ const stepToOriginal = function(str, m, n) {
     while (newStr != str) {
         newStr = newStr.slice(length - m, length) + newStr.slice(0,length - m);
         newStr = newStr.slice(length - n, length) + newStr.slice(0,length - n);
-        console.log(newStr);
         count += 1;
     }
     return count;
 }
 
-console.log(stepToOriginal('hello',1, 3))
+console.log(stepToOriginal('hello', 1, 3))
