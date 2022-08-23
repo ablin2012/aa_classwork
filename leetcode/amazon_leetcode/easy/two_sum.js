@@ -30,12 +30,23 @@ const twoSum = function(nums, target){
     for (let i = 0; i < nums.length; i++) {
         for (let j = 0; j < nums.length; j++) {
             if (i < j && nums[i] + nums[j] === target) {
-                return [nums[i], nums[j]]
+                return [i, j]
             }
         }
     }
 }
 
 const twoSum2 = function(nums,target){
-    
+    let hash = {};
+    for (let i = 0; i < nums.length; i++) {
+        let curr = target - nums[i];
+        if (hash[curr] != undefined) {
+            return [hash[curr], i];
+        } else {
+            hash[nums[i]] = i;
+        }
+    }
+    return null;
 }
+
+console.log(twoSum2([3,2,1,5], 5));
