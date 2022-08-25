@@ -103,5 +103,5 @@ function minMoves2(n, startRow, startCol, endRow, endCol) {
         }
         steps += 1;
     }
-    return -1;
+    return -1;  
 }
