@@ -16,7 +16,7 @@ const partition = function(head, p) {
         }
     }
     smaller.next = lHead.next.next;
-    return sHead.next.next;
+    return sHead.next.next;  
 }
 
 const partition2 = function(head, p) {
