@@ -25,3 +25,17 @@ const sumList = function(node1, node2) {
     return head;
 }
 
+const sumList2 = function(node1, node2) {
+    let curr1 = node1;
+    let curr2 = node2;
+    let length1 = 0;
+    let length2 = 0;
+    while(curr1) {
+        curr1 = curr1.next;
+        length1 += 1;
+    }
+    while(curr2) {
+        curr2 = curr2.next;
+        length2 += 1;
+    }
+}
