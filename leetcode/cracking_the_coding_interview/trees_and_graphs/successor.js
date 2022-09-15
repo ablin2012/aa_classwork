@@ -11,3 +11,18 @@ const successor = function(node) {
     return null;
 }
 
+const successor2 = function(node) {
+    if (node.right) {
+        let ans = node.right;
+        while (ans.left) {
+            ans = ans.left;
+        }
+        return ans;
+    } else {
+        let ans = node;
+        while (ans.parent.left != ans) {
+            ans = ans.parent;
+        }
+        return ans.parent;
+    }
+}
