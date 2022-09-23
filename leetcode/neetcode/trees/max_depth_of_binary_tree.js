@@ -13,3 +13,13 @@ var maxDepth = function(root) {
     }
     return depth;
 };
+
+var maxDepthDFS = function(root) {
+	if (root === null) return 0;
+	
+	const leftPath = maxDepth(root.left);
+	const rightPath = maxDepth(root.right);
+
+	return 1 + Math.max(leftPath,rightPath);
+
+};
