@@ -14,5 +14,5 @@ const rotateMatrix = function(matrix) {
             matrix[i][last] = top; // top to right
         }
     }
-    return true;
+    return matrix;
 }
