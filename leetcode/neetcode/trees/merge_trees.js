@@ -1,15 +1,10 @@
-if (matrix.length === 0 || matrix.length != matrix[0].length) return false;
-let n = matrix.length;
-for (let layer = 0; layer < Math.floor(n/2); layer++) {
-    let first = layer;
-    let last = n - layer - 1;
-    for (let i = first; i < last; i++) {
-        let offset = i - first;
-        let top = matrix[first][i];
-        matrix[first][i] = matrix[last - offset][first]; // left to top
-        matrix[last - offset][first] = matrix[last][last - offset]; // bottom to left
-        matrix[last][last - offset] = matrix[i][last]; // right to bottom
-        matrix[i][last] = top; // top to right
-    }
-}
-return matrix;
+var mergeTrees = function(root1, root2) {
+    if (!root1 && !root2) return null;
+    let val1 = (!root1) ? 0 : root1.val;
+    let val2 = (!root2) ? 0 : root2.val;
+    const sum = val1 + val2;
+    let newNode = new TreeNode(sum);
+    newNode.left = mergeTrees((root1) ? root1.left : null, (root2) ? root2.left : null);
+    newNode.right = mergeTrees((root1) ? root1.right : null, (root2) ? root2.right : null);
+    return newNode;  
+};
