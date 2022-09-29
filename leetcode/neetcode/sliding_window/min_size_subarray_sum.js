@@ -21,3 +21,18 @@ var minSubArrayLen = function(target, nums) {
     if (valid) return ans;
     return 0;
 };
+
+var minSubArrayLen = function(target, nums) {
+    let start = 0;
+    let minLen = nums.length + 1
+    let sum = 0;
+    for(let i = 0 ; i < nums.length; i ++){
+        sum = sum + nums[i]
+        while(sum >= target){
+            minLen = Math.min(minLen, (i - start) +1)
+            sum = sum - nums[start]
+            start ++
+        }
+    }
+    return minLen === nums.length + 1 ? 0 : minLen
+};
