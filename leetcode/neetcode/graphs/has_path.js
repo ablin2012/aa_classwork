@@ -9,3 +9,12 @@ const has_path = function(graph, src, dst) { // f, k
 	}
 	return false;
 }
+
+const has_path_recur = function(graph, src, dst) {
+	if (src === dst) return true;
+	if (graph[src].length === 0) return false;
+	for (let i = 0; i < graph[src].length; i++) { // for (let neighbor of graph[src])
+		if (has_path_recur(graph, graph[src][i], dst)) return true;
+	}
+	return false;
+}
