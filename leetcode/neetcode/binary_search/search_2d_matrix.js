@@ -15,7 +15,7 @@ var bsearch = function(array, target) {
     if (array.length === 0) return false;
     let mid = Math.floor(array.length/2);
     if (array[mid] === target) return true;
-    let left = array.slice(0,mid);
+    let left = array.slice(0,mid); 
     let right = array.slice(mid + 1);
     if (array[mid] > target) {
         return bsearch(left, target);
