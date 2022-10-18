@@ -23,3 +23,43 @@ var bsearch = function(array, target) {
         return bsearch(right,target);
     }
 }
+
+var searchMatrix2 = function(matrix, target) {
+	let left = 0;
+	let right = matrix.length - 1;
+	let rangeArray = []
+    
+	while (left <= right) {
+    		const midIndex = Math.floor((left + right) / 2);
+    		const midArray = matrix[midIndex];
+   	 
+    		if (midArray[0] <= target && target <= midArray[midArray.length - 1]) {
+        			rangeArray = midArray;
+        			break;
+    		} else if (midArray[0] > target) {
+        			right = midIndex - 1;
+    		} else if (midArray[midArray.length - 1] < target) {
+        			left = midIndex + 1;
+    		}
+	}
+    
+	if (rangeArray.length === 0) return false;
+    
+	left = 0;
+	right = rangeArray.length - 1;
+    
+	while (left <= right) {
+    		const midIndex = Math.floor((left + right) / 2);
+    		const midEle = rangeArray[midIndex];
+   	 
+    		if (midEle === target) {
+        			return true;
+    		} else if (midEle > target) {
+        			right = midIndex - 1;
+    		} else {
+        			left = midIndex + 1;
+    		}
+	}
+    
+	return false;
+};
