@@ -1,3 +1,10 @@
+class Node{
+	constructor(val) {
+		this.val = val;
+		this.adjacentNodes = [];
+	}
+}
+
 const has_path = function(graph, src, dst) { // f, k
 	let stack = [src];  // [g, g, k]
 	while(stack.length) {
